@@ -137,30 +137,94 @@ main > section{
     margin-top:10px;
 }
 
+/* some facts cards */
+.fact{
+    border: 1px solid rgba(255, 144, 14, 1);
+    width: 240px;
+    height: 240px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.facts-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    
+}
+.facts-container>.fact>.fact-number:hover{
+    color: rgba(255, 144, 14, 3);
+    font-size: 1.8rem;
+    transition-duration: 1s;
+}
+.facts-container>.fact:hover{
+    background-color: #424242;
+}
+.fact-number{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.fact-description{
+    max-width: 540px;
+}
+
+
+/* sponsors styles */
+.our-sponsor {
+    flex-direction: column;
+}
+.our-sponsor>.sponsors-img{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+.our-sponsor>.sponsors-img>.effect{
+    filter: grayscale(100%);
+}
+
+.our-sponsor>.sponsors-img>.effect:hover{
+    filter: none;
+    transition-duration: 1s;
+}
+
 
 /* responsive media query */
 @media screen and (max-width: 576px) {
-
     .navbar,
-    .nav-links, .teams {
+    .nav-links, .teams , .facts-container{
         flex-direction: column;
         gap: 40px;
         align-items: center;
     }
-    .team-img-container{
-        grid-template-columns: repeat(1,1fr);
+    .team-img-container , .facts-container, .our-sponsor>.sponsors-img{
+        grid-template-columns: 1fr;
+        
     }
-   .our-features{
-    margin-left: 20px;
+    .sponsors-img, .facts-container{
+        gap: 24px;
+        justify-items: center;
+    }
+   .our-features, .container{
+    margin-left: 5.8rem;
    }
 }
+
+
 
 /* medium size device */
 @media screen and (min-width:576px) and (max-width: 992px){
     .teams{
         flex-direction: column;
     }
-    .our-features{
+    .our-features, .facts-container{
         margin-left: 50px auto;
     }
+        .facts-container{
+            grid-template-columns: repeat(2, 2fr);
+            justify-items: center;
+            gap: 20px;
+        }
+        .our-sponsor>.sponsors-img{
+            grid-template-columns: repeat(3,1fr);
+            justify-items: center;
+        }
 }
