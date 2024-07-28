@@ -16,12 +16,12 @@
     font-weight: 600;
     color: white;
     font-size: 1.25rem;
-    border-color: white;
+    border: none;
     transition-duration: 0.5s;
 }
 
 .btn-primary:hover{
-    background-color: black;
+    background-color: #424242;
     padding: 25px 30px;
 }
 .display-flex{
@@ -75,6 +75,7 @@
     max-width: 850px;
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 50px;
 }
 
 .banner-title{
@@ -82,4 +83,13 @@
     font-size: 4rem;
 }
 
+.banner-image{
+    width: 100%;
+}
 
+/* responsive media query */
+@media screen and (max-width: 576px){
+    .navbar, .nav-links{
+        flex-direction: column;
+    }
+}
